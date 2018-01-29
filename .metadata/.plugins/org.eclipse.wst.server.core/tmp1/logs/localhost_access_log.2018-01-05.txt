@@ -1,0 +1,11 @@
+127.0.0.1 - - [05/Jan/2018:15:54:28 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:54:29 +0530] "GET /Messanger/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:54:53 +0530] "GET /Messanger/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:55:12 +0530] "GET /Messanger/webapp/message HTTP/1.1" 404 1042
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:55:56 +0530] "GET /Messanger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:57:26 +0530] "GET /Messanger/webapp/messages HTTP/1.1" 404 1044
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:57:56 +0530] "GET /webapp/messages HTTP/1.1" 404 1024
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:58:48 +0530] "GET /Messenger/webapi/messages HTTP/1.1" 404 1044
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:15:59:45 +0530] "GET /Messanger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [05/Jan/2018:16:00:05 +0530] "GET /Messanger/webapi/messages HTTP/1.1" 200 215
+127.0.0.1 - - [05/Jan/2018:16:04:00 +0530] "GET /Messanger/webapi/messages HTTP/1.1" 200 215

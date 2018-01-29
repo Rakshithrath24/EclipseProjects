@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TestService" targetNamespace="http://wsdltesst.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdltesst.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://wsdltesst.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://wsdltesst.com/" version="1.0">
+
+  <xs:element name="testAdd" type="tns:testAdd"/>
+
+  <xs:element name="testAddResponse" type="tns:testAddResponse"/>
+
+  <xs:complexType name="testAdd">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testAddResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="testAdd">
+    <wsdl:part name="parameters" element="tns:testAdd">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testAddResponse">
+    <wsdl:part name="parameters" element="tns:testAddResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Addition">
+    <wsdl:operation name="testAdd">
+      <wsdl:input name="testAdd" message="tns:testAdd">
+    </wsdl:input>
+      <wsdl:output name="testAddResponse" message="tns:testAddResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestServiceSoapBinding" type="tns:Addition">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="testAdd">
+      <soap:operation soapAction="urn:TestAdd" style="document"/>
+      <wsdl:input name="testAdd">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testAddResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TestService">
+    <wsdl:port name="TestPort" binding="tns:TestServiceSoapBinding">
+      <soap:address location="http://localhost:9090/TestPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

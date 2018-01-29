@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProductCatService" targetNamespace="http://programs.eai.mindtree.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://programs.eai.mindtree.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://programs.eai.mindtree.com/" version="1.0" xmlns:tns="http://programs.eai.mindtree.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="addProduct" type="tns:addProduct"/>
+
+  <xs:element name="addProductResponse" type="tns:addProductResponse"/>
+
+  <xs:element name="getProductCategories" type="tns:getProductCategories"/>
+
+  <xs:element name="getProductCategoriesResponse" type="tns:getProductCategoriesResponse"/>
+
+  <xs:element name="getProducts" type="tns:getProducts"/>
+
+  <xs:element name="getProductsResponse" type="tns:getProductsResponse"/>
+
+  <xs:complexType name="getProducts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addProductResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductCategories">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getProductCategoriesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getProducts">
+    <wsdl:part name="parameters" element="tns:getProducts">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProductResponse">
+    <wsdl:part name="parameters" element="tns:addProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductCategories">
+    <wsdl:part name="parameters" element="tns:getProductCategories">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:getProductCategoriesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductsResponse">
+    <wsdl:part name="parameters" element="tns:getProductsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProduct">
+    <wsdl:part name="parameters" element="tns:addProduct">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ProductCat">
+    <wsdl:operation name="getProducts">
+      <wsdl:input name="getProducts" message="tns:getProducts">
+    </wsdl:input>
+      <wsdl:output name="getProductsResponse" message="tns:getProductsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <wsdl:input name="addProduct" message="tns:addProduct">
+    </wsdl:input>
+      <wsdl:output name="addProductResponse" message="tns:addProductResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategories">
+      <wsdl:input name="getProductCategories" message="tns:getProductCategories">
+    </wsdl:input>
+      <wsdl:output name="getProductCategoriesResponse" message="tns:getProductCategoriesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductCatServiceSoapBinding" type="tns:ProductCat">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="urn:GetProducts" style="document"/>
+      <wsdl:input name="getProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <soap:operation soapAction="urn:AddProduct" style="document"/>
+      <wsdl:input name="addProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategories">
+      <soap:operation soapAction="urn:GetProductCategories" style="document"/>
+      <wsdl:input name="getProductCategories">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductCategoriesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductCatService">
+    <wsdl:port name="ProductCatPort" binding="tns:ProductCatServiceSoapBinding">
+      <soap:address location="http://localhost:8085/TestWeb/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

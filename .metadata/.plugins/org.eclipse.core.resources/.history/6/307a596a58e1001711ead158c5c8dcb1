@@ -1,0 +1,47 @@
+package com.mindtree.eai.programs;
+import java.util.List;
+
+import com.mindtree.eai.programs.business.ProductServiceImpl;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+
+//@WebService(name="TestWeb",serviceName="TestWebService",portName="TestWebCatalogPort")
+@WebService(targetNamespace = "http://programs.eai.mindtree.com/", portName = "ProductCatPort", serviceName = "ProductCatService")
+public class ProductCat 
+{
+	ProductServiceImpl getService = new ProductServiceImpl();
+	//@WebMethod
+	@WebMethod(operationName = "getProductCategories", action = "urn:GetProductCategories")
+	@RequestWrapper(className = "com.mindtree.eai.programs.jaxws.GetProductCategories", localName = "getProductCategories", targetNamespace = "http://programs.eai.mindtree.com/")
+	@ResponseWrapper(className = "com.mindtree.eai.programs.jaxws.GetProductCategoriesResponse", localName = "getProductCategoriesResponse", targetNamespace = "http://programs.eai.mindtree.com/")
+	@WebResult(name = "return")
+	public List<String> getProductCategories()
+	{
+		return getService.getProductCategories();
+	}
+	//@WebMethod
+	@WebMethod(operationName = "getProducts", action = "urn:GetProducts")
+	@RequestWrapper(className = "com.mindtree.eai.programs.jaxws.GetProducts", localName = "getProducts", targetNamespace = "http://programs.eai.mindtree.com/")
+	@ResponseWrapper(className = "com.mindtree.eai.programs.jaxws.GetProductsResponse", localName = "getProductsResponse", targetNamespace = "http://programs.eai.mindtree.com/")
+	@WebResult(name = "return")
+	public List<String> getProducts(@WebParam(name = "arg0") String category)
+	{
+		return getService.getProducts(category);
+	}
+	//@WebMethod
+	@WebMethod(operationName = "addProduct", action = "urn:AddProduct")
+	@RequestWrapper(className = "com.mindtree.eai.programs.jaxws.AddProduct", localName = "addProduct", targetNamespace = "http://programs.eai.mindtree.com/")
+	@ResponseWrapper(className = "com.mindtree.eai.programs.jaxws.AddProductResponse", localName = "addProductResponse", targetNamespace = "http://programs.eai.mindtree.com/")
+	@WebResult(name = "return")
+	public boolean addProduct(@WebParam(name = "arg0") String category,@WebParam(name = "arg1") String product)
+	{
+		return getService.addProduct(category,product);
+	}
+	
+}
+  

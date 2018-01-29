@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.mindtree.eai.consumer&apos; to &apos;RestConsumer/src&apos;&#x0D;&#x0A;- Original project: &apos;Messanger&apos;&#x0D;&#x0A;- Destination element: &apos;RestConsumer/src&apos;&#x0D;&#x0A;- Original element: &apos;Messanger/src/main/java/com.mindtree.eai.consumer&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=RestConsumer/src" element1="/src\/main\/java&lt;com.mindtree.eai.consumer" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1513857859673" version="1.0"/>
+</session>

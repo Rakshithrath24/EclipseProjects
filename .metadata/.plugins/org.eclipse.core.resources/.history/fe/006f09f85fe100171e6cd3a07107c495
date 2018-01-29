@@ -1,0 +1,11 @@
+package com.wsdltesst;
+
+public class Test implements Addition {
+
+	@Override
+	public int testAdd(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

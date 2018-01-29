@@ -1,0 +1,12 @@
+127.0.0.1 - - [21/Dec/2017:16:13:50 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:13:51 +0530] "GET /Messanger/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:14:52 +0530] "GET /Messanger/webapp/1 HTTP/1.1" 404 1030
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:14:52 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:15:03 +0530] "GET /Messanger/webapp/ HTTP/1.1" 404 1028
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:15:28 +0530] "GET /Messanger/webapp/messages/1 HTTP/1.1" 404 1048
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:15:36 +0530] "GET /Messanger/webapp/message/1 HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:15:52 +0530] "GET /Messanger/webapi/message/1 HTTP/1.1" 404 1010
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:16:50 +0530] "GET /Messanger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:17:09 +0530] "GET /Messanger/webapi/messages/1 HTTP/1.1" 200 47
+127.0.0.1 - - [21/Dec/2017:16:18:08 +0530] "GET /Messanger/webapi/messages/1 HTTP/1.1" 200 47
+127.0.0.1 - - [21/Dec/2017:16:18:31 +0530] "GET /Messanger/webapi/messages HTTP/1.1" 200 215

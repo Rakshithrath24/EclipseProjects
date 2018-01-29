@@ -1,0 +1,34 @@
+package com.mindtree.eai.DemoMap;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.mindtree.eai.model.CampusMinds;
+import com.mindtree.eai.model.CamusMindsDetails;
+import com.mindtree.eai.utils.HibernateUtil;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        CampusMinds c = new CampusMinds();
+        c.setMid("M1043193");
+        c.setName("Rakshith");
+        c.setEmail("rkr@gmail.com");
+        
+        CamusMindsDetails cd = new CamusMindsDetails();
+        cd.setCity("Bengaluru");
+        cd.setPincode(960018);
+        
+        c.setDetails(cd);
+        
+        Transaction trns = null;
+        Session session= HibernateUtil.getSessionFactory().openSession();
+            trns = session.beginTransaction();
+            session.save(c);
+            session.getTransaction().commit();
+            session.close();
+        
+        
+    }
+}

@@ -1,0 +1,5 @@
+package com.mindtree.eai.Messanger.dao;
+
+public class DAOInterface {
+
+}

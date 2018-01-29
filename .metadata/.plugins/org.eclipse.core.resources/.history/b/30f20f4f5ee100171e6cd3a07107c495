@@ -1,0 +1,15 @@
+package com.wsdl;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService(targetNamespace = "http://wsdl.com/", portName = "TestAddPort", serviceName = "TestAddService")
+public class TestAdd 
+{
+	@WebMethod(operationName = "Add", action = "urn:Add")
+	public int Add(int x,int y)
+	{
+		return x+y;
+	}
+
+}

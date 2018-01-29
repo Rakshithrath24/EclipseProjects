@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="0/org.eclipse.jst.ws.wsImpl.java">
+		<item value="com.mindtree.eai.programs.ProductCat"/>
+		<item value="com.mindtree.eai.service.StudentServiceImpl"/>
+		<item value="com.test.eai.TestMethod"/>
+		<item value="com.wsdl.eai.Test"/>
+		<item value="com.mindtree.eai.Demo"/>
+	</list>
+</section>

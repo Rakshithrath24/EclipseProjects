@@ -1,0 +1,5 @@
+package com.wsdltesst;
+
+public interface Addition {
+
+}

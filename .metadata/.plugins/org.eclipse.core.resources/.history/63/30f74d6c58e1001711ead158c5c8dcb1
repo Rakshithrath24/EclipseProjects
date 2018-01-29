@@ -1,0 +1,31 @@
+package com.mindtree.eai.programs;
+import java.util.List;
+
+import com.mindtree.eai.programs.business.ProductServiceImpl;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+//@WebService(name="TestWeb",serviceName="TestWebService",portName="TestWebCatalogPort")
+@WebService(targetNamespace = "http://programs.eai.mindtree.com/", portName = "ProductCatPort", serviceName = "ProductCatService")
+public class ProductCat 
+{
+	ProductServiceImpl getService = new ProductServiceImpl();
+	//@WebMethod
+	public List<String> getProductCategories()
+	{
+		return getService.getProductCategories();
+	}
+	//@WebMethod
+	public List<String> getProducts(String category)
+	{
+		return getService.getProducts(category);
+	}
+	//@WebMethod
+	public boolean addProduct(String category,String product)
+	{
+		return getService.addProduct(category,product);
+	}
+	
+}
+  

@@ -1,0 +1,6 @@
+package com.wsdltesst;
+
+public interface Addition 
+{
+	public int testAdd(int a,int b);
+}

@@ -1,0 +1,9 @@
+package com.wsdltesst;
+
+import javax.jws.WebService;
+
+@WebService
+public interface Addition 
+{
+	public int testAdd(int a,int b);
+}
